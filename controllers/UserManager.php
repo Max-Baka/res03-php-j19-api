@@ -5,6 +5,14 @@ class UserManager extends AbstractManager {
     public function getAllUsers() : array
     {
         // get all the users from the database
+         $query = $this->db->prepare("SELECT * FROM users");
+         $query-> execute();
+         $getAllUsers = $query->fetch(PDO::FETCH_ASSOC);
+         $userTabl= [];
+         foreach (getAllUsers as user){
+             
+         }
+         return $userTabl;
     }
 
     public function getUserById(int $id) : User
